@@ -1,0 +1,130 @@
+$dark-cyan: hsl(185, 75%, 39%);
+$dery-dark-desaturated-blue: hsl(229, 23%, 23%);
+$dark-grayish-blue: hsl(227, 10%, 46%);
+$dark-gray: hsl(0, 0%, 59%);
+
+html {
+  scroll-behavior: smooth;
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $dark-cyan;
+  background-image: url("./images/bg-pattern-top.svg"), url("./images/bg-pattern-bottom.svg");
+  background-repeat: no-repeat;
+  background-position: right 50vw bottom 50vh, left 50vw top 50vh;
+
+  &__wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 24rem;
+    width: 22rem;
+    background-color: #fff;
+    border-radius: 20px;
+
+    &__top {
+      background-image: url("./images/bg-pattern-card.svg");
+      position: absolute;
+      height: 9rem;
+      width: 22rem;
+      bottom: 15rem;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+    }
+
+    &__image {
+      z-index: 1;
+      border: 5px solid #fff;
+      border-radius: 50%;
+      margin-bottom: 6.4rem;
+
+      img {
+        border-radius: 50%;
+      }
+    }
+
+    &__middle {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      top: 13rem;
+      width: 22rem;
+      height: 6rem;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1px solid $dark-gray;
+
+      &__content {
+        display: flex;
+        margin-bottom: 5rem;
+
+        &__name {
+          width: 7rem;
+          font-weight: 700;
+          word-spacing: 4px;
+          position: relative;
+          font-size: 18px;
+          right: 1rem;
+        }
+
+        &__age {
+          font-weight: 400;
+          color: $dark-gray;
+          position: absolute;
+          left: 14rem;
+          font-size: 1.1rem;
+        }
+      }
+
+      &__town {
+        position: absolute;
+        font-weight: 400;
+        color: $dark-gray;
+        bottom: 50px;
+        font-size: 0.8rem;
+      }
+    }
+
+    &__bottom {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(10px, 1fr));
+      justify-items: center;
+      align-items: center;
+      position: absolute;
+      top: 19rem;
+      width: 22rem;
+      height: 5rem;
+
+      &__item {
+        text-align: center;
+
+        &__number {
+          text-transform: uppercase;
+          font-weight: 700;
+          font-size: 1.1rem;
+        }
+
+        &__content {
+          font-size: 0.6rem;
+          color: $dark-gray;
+          letter-spacing: 0.1rem;
+          padding-top: 0.8rem;
+        }
+      }
+    }
+  }
+}
